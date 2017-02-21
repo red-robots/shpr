@@ -248,7 +248,7 @@ h3.counties {
 	width: 350px;
 	height: 124px;
 	z-index: 1;
-	margin: 20px auto 10px auto;
+	margin: 20px auto 25px auto;
 	text-indent: -9000px;
 }
 .home-logo-mhpc a {
@@ -344,7 +344,7 @@ h3.counties {
 
 .mhpc-description {
 	width: 80%;
-	min-height: 386px;
+	min-height: 371px;
 	font-size: 14px;
 	color:#00848e;
 	line-height: 1.5;
