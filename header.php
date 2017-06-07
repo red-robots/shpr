@@ -9,6 +9,7 @@
  * @since Twenty Twelve 1.0
  */
 ?><!DOCTYPE html>
+<!-- lw2 -->
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
