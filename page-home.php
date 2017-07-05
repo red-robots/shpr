@@ -133,8 +133,8 @@ get_header(); ?>
                                  <div class="home-post-right">
                                      <div class="home-post-date">
                                     	<span class="<?php echo $colorType; ?>" >
-												<?php echo $startdate->format('M d'); ?>
-												<?php if(get_field('event_end_date')!="") { 
+					<?php if($startdate != '') {echo $startdate->format('M d');} ?>
+					<?php if(get_field('event_end_date')!="") { 
 													echo " " . "-" . " " . $enddate->format('M d'); 
 												} ?>
                                         </span>
