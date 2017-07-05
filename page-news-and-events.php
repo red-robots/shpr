@@ -156,8 +156,19 @@ $linkdown = sanitize_title_with_dashes($getTitle);
                
 <?php 
 // Set some variables to set how to show the dates.
-$startdate = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
-$enddate = DateTime::createFromFormat('Ymd', get_field('event_end_date'));
+//$startdate = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
+//$enddate = DateTime::createFromFormat('Ymd', get_field('event_end_date'));
+	
+	// get raw date
+$startdate = get_field('event_start_date', false, false);
+$enddate = get_field('event_end_date', false, false);
+
+
+// make date object
+$startdate = new DateTime($startdate);
+$enddate = new DateTime($enddate);
+	
+	
 // add link to more info
 $getTitle = get_the_title(); 
 $linkdown = sanitize_title_with_dashes($getTitle);
