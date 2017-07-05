@@ -119,10 +119,14 @@ get_header(); ?>
 								}
 								
 								
-								// Set some variables to set how to show the dates.
-								$startdate = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
-								$enddate = DateTime::createFromFormat('Ymd', get_field('event_end_date'));
+	// get raw date
+$startdate = get_field('event_start_date', false, false);
+$enddate = get_field('event_end_date', false, false);
 
+
+// make date object
+$startdate = new DateTime($startdate);
+$enddate = new DateTime($enddate);
 							?>
                             
                             <?php //if ( $the_query->have_posts() ) : ?>
