@@ -178,7 +178,7 @@
         </div> header facebook -->
         
         <div class="header-facebook">
-        	<a href="<?php the_field('smat_facebook', 'option'); ?>" target="_blank">Like us on Facebook</a>
+        	<a href="<?php the_field('facebook_link', 'option'); ?>" target="_blank">Like us on Facebook</a>
         </div> <!--header facebook -->
         
         
