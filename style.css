@@ -505,6 +505,13 @@ background: linear-gradient(to bottom,  #005c64 0%,#007e88 100%); /* W3C */
 	text-align: right;	
 	margin:7px 0 0 0;
 }
+.social {
+	width: auto;
+	display:inline-block;
+	float:right;
+	text-align: right;	
+	margin:7px 0 0 0;
+}
 .weboc-links a {
 	text-decoration: none;	
 }

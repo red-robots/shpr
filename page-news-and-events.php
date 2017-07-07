@@ -68,7 +68,7 @@ $linkdown = sanitize_title_with_dashes($getTitle);
   <a href="#<?php echo $linkdown; ?>">
   	<?php
 		
-		if(in_category('mhpc-meetings')) { // If is The SMAT Tree) 
+		if(in_category('shpr-meetings')) { // If is The SMAT Tree) 
 			$iconType = 'post-icon-meetings';
 			$iconSet = 'post-icon-meetings';
 			$colorType = 'color-black';
@@ -78,7 +78,7 @@ $linkdown = sanitize_title_with_dashes($getTitle);
 			$iconSet = 'post-icon-meetings';
 			$colorType = 'color-black';
 			$site ="smat";
-		} elseif(in_category('mhpc-events')) { // If is The SMAT Tree)
+		} elseif(in_category('shpr-events')) { // If is The SMAT Tree)
 			$iconType = 'post-icon-events';
 			$iconSet = 'post-icon-events';
 			$colorType = 'color-black';
@@ -88,7 +88,7 @@ $linkdown = sanitize_title_with_dashes($getTitle);
 			$iconSet = 'post-icon-events';
 			$colorType = 'color-black';
 			$site ="smat";
-		} elseif(in_category('mhpc-notes')) { // If is The SMAT Tree)
+		} elseif(in_category('shpr-notes')) { // If is The SMAT Tree)
 			$iconType = 'post-icon-notes';
 			$iconSet = 'post-icon-notes';
 			$colorType = 'color-black';
