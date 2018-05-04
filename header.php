@@ -31,8 +31,8 @@
 <![endif]-->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/colorbox.css" />
 
-<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
 
 
 <?php wp_head(); ?>
