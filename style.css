@@ -419,6 +419,16 @@ h3.counties {
 		margin: 0 0;
 		position: relative;
 	}
+    .main-navigation ul.nav-menu > li {
+        margin-right: 14px;
+        margin-left: 6px;
+    }
+    .main-navigation ul.nav-menu > li:first-child {
+        margin-left: 0;
+    }
+    .main-navigation ul.nav-menu > li:last-child {
+        margin-right: 0;
+    }
 	.main-navigation li a {
 		border-bottom: 0;
 		color: #019390;
