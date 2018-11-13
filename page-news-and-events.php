@@ -30,7 +30,7 @@ if($cat == 'mhpc') {
 <h1 class="newsevents"><?php the_title(); ?></h1>
 <div class="eventtop"> 
 <?php 
-			   
+    
 	$args = array(
 		'post_type' => 'post',
 		'posts_per_page' => '-1',
@@ -54,16 +54,30 @@ if($cat == 'mhpc') {
 // get raw date
 $startdate = get_field('event_start_date', false, false);
 $enddate = get_field('event_end_date', false, false);
-
-
+$date1 = ($startdate) ? strtotime($startdate) : '';
+$date2 = ($enddate) ? strtotime($enddate) : '';
+$dateNow = strtotime( date('Y-m-d') );
+$show_event = false;
+if($date1 && $date2) {
+    $range = range($date1,$date2);
+    if ( (in_array($dateNow, $range) ) || $date1>=$dateNow ) {
+        $show_event = TRUE;
+    }
+} else {
+    if($date1) {
+        if($date1>=$dateNow) {
+            $show_event = TRUE;
+        }
+    }
+}
+    
 // make date object
 $startdate = new DateTime($startdate);
 $enddate = new DateTime($enddate);
 // add link to more info
 $getTitle = get_the_title(); 
 $linkdown = sanitize_title_with_dashes($getTitle);
-?>
-                
+if($show_event) { ?>
 <div class="eventposttop"> 
   <a href="#<?php echo $linkdown; ?>">
   	<?php
@@ -124,9 +138,8 @@ $linkdown = sanitize_title_with_dashes($getTitle);
       </div><!-- entry-content -->
       </a>
  </div><!-- square post container -->
-
- <div class="clear"></div>
-            
+<div class="clear"></div>
+<?php } ?>
             
 <?php endwhile; // end of the loop. ?>
 
@@ -162,7 +175,22 @@ $linkdown = sanitize_title_with_dashes($getTitle);
 	// get raw date
 $startdate = get_field('event_start_date', false, false);
 $enddate = get_field('event_end_date', false, false);
-
+$date1 = ($startdate) ? strtotime($startdate) : '';
+$date2 = ($enddate) ? strtotime($enddate) : '';
+$dateNow = strtotime( date('Y-m-d') );
+$show_event = false;
+if($date1 && $date2) {
+    $range = range($date1,$date2);
+    if ( (in_array($dateNow, $range) ) || $date1>=$dateNow ) {
+        $show_event = TRUE;
+    }
+} else {
+    if($date1) {
+        if($date1>=$dateNow) {
+            $show_event = TRUE;
+        }
+    }
+}
 
 // make date object
 $startdate = new DateTime($startdate);
@@ -172,8 +200,7 @@ $enddate = new DateTime($enddate);
 // add link to more info
 $getTitle = get_the_title(); 
 $linkdown = sanitize_title_with_dashes($getTitle);
-?>
-                
+if($show_event) { ?>
 <div class="eventpostbottom"> 
      
   	<?php
@@ -235,8 +262,7 @@ $linkdown = sanitize_title_with_dashes($getTitle);
                 
       </div><!-- entry-content -->
  </div><!-- square post container -->
-
-
+<?php } ?>
 <?php endwhile; // end of the loop. ?>
 <?php endif; // end of the loop. ?>
 

@@ -104,7 +104,6 @@
                 <div id="top-buttons">
                     <ul>
                        <?php if ('SEHPC' == $WhichSiteAreWeOn) { // If is The MHPC Tree ?>
-                            <li class="smat"><a href="<?php bloginfo('url'); ?>/smat">Go to SMAT site</a></li>
                             <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
                        <?php } elseif('SMAT' == $WhichSiteAreWeOn) { // If is the SMAT Tree?>
                             <li class="mhpc"><a href="<?php bloginfo('url'); ?>/sehpc">Go to SHPR site</a></li>

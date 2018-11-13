@@ -164,17 +164,10 @@ function js_custom_init()
   ); 
   register_post_type('organizations',$args);
 	
-	
-	
-	
-	
-	
-	
-	
 
   // Register the Program Highlights
   
-     $labels = array(
+    $labels = array(
 	'name' => _x('SHPR Program Highlights', 'post type general name'),
     'singular_name' => _x('SHPR Program Highlights', 'post type singular name'),
     'add_new' => _x('Add New', 'Programs'),
@@ -201,7 +194,6 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
   ); 
   register_post_type('programs',$args);
   

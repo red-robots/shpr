@@ -170,7 +170,12 @@ var currentTallest = 0,
    
  });
 	
-
+ 
+    /* Accordion */
+    $(document).on("click","#list_classes .panel_title",function(){
+        $(this).next().slideToggle('slow');
+        $(this).parents(".class-info").toggleClass('open');
+    });
 
 
 }); // end of on window load function.
