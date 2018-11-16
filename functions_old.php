@@ -83,8 +83,406 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 // add a favicon from your themes images folder
 function mytheme_favicon() { ?> <link rel="shortcut icon" href="<?php echo bloginfo('stylesheet_directory') ?>/images/favicon.ico" > <?php } add_action('wp_head', 'mytheme_favicon');
 
+
+
 /* Custom Post Types */
-require get_template_directory() . '/inc/post-types.php';
+
+add_action('init', 'js_custom_init');
+function js_custom_init() 
+{
+	
+	
+	
+	// Leadership
+ 
+     $labels = array(
+	'name' => _x('Leadership', 'post type general name'),
+    'singular_name' => _x('Leadership', 'post type singular name'),
+    'add_new' => _x('Add New', 'Leadership'),
+    'add_new_item' => __('Add New Leadership'),
+    'edit_item' => __('Edit Leadership'),
+    'new_item' => __('New Leadership'),
+    'view_item' => __('View Leadership'),
+    'search_items' => __('Search Leadership'),
+    'not_found' =>  __('No Leadership found'),
+    'not_found_in_trash' => __('No Leadership found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Leadership'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('leadership',$args);
+	
+	
+	
+	
+	
+		// Partner Organizations
+  
+     $labels = array(
+	'name' => _x('Partner Organizations', 'post type general name'),
+    'singular_name' => _x('Partner Organization', 'post type singular name'),
+    'add_new' => _x('Add New', 'Organization'),
+    'add_new_item' => __('Add New Organization'),
+    'edit_item' => __('Edit Organization'),
+    'new_item' => __('New Organization'),
+    'view_item' => __('View Organization'),
+    'search_items' => __('Search Organization'),
+    'not_found' =>  __('No Organization found'),
+    'not_found_in_trash' => __('No Organizations found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Partner Organizations'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail', 'county'),
+	'taxonomies' => array('organization', 'county') 
+	
+  ); 
+  register_post_type('organizations',$args);
+	
+
+  // Register the Program Highlights
+  
+    $labels = array(
+	'name' => _x('SHPR Program Highlights', 'post type general name'),
+    'singular_name' => _x('SHPR Program Highlights', 'post type singular name'),
+    'add_new' => _x('Add New', 'Programs'),
+    'add_new_item' => __('Add New Programs'),
+    'edit_item' => __('Edit Programs'),
+    'new_item' => __('New Programs'),
+    'view_item' => __('View Programs'),
+    'search_items' => __('Search Programs'),
+    'not_found' =>  __('No Programs found'),
+    'not_found_in_trash' => __('No Programs found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'SHPR Program Highlights'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+  ); 
+  register_post_type('programs',$args);
+  
+  
+   // Register the Program Highlights
+  
+/*     $labels = array(
+	'name' => _x('MHPC Resources', 'post type general name'),
+    'singular_name' => _x('Resources', 'post type singular name'),
+    'add_new' => _x('Add New', 'Resources'),
+    'add_new_item' => __('Add New Resources'),
+    'edit_item' => __('Edit Resources'),
+    'new_item' => __('New Resources'),
+    'view_item' => __('View Resources'),
+    'search_items' => __('Search Resources'),
+    'not_found' =>  __('No Resources found'),
+    'not_found_in_trash' => __('No Resources found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'MHPC Resources'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('resources',$args);*/
+  
+    // Register the Homepage Slides
+  
+     $labels = array(
+	'name' => _x('SHPR Homepage Slides', 'post type general name'),
+    'singular_name' => _x('Homepage Slides', 'post type singular name'),
+    'add_new' => _x('Add New', 'Slide'),
+    'add_new_item' => __('Add New Slide'),
+    'edit_item' => __('Edit Slides'),
+    'new_item' => __('New Slide'),
+    'view_item' => __('View Slides'),
+    'search_items' => __('Search Slides'),
+    'not_found' =>  __('No Slides found'),
+    'not_found_in_trash' => __('No Slides found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'SHPR Homepage Slides'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('slides',$args);
+  
+  
+  
+  
+  
+  //#######################################################
+  
+  					// SMAT Custom Post Types 
+					
+// #########################################################
+
+
+// Register the SMAT NEws and Events
+  
+/*     $labels = array(
+	'name' => _x('SMAT News and Events', 'post type general name'),
+    'singular_name' => _x('SMAT News and Events', 'post type singular name'),
+    'add_new' => _x('Add New', 'News/Events'),
+    'add_new_item' => __('Add New News/Events'),
+    'edit_item' => __('Edit News/Events'),
+    'new_item' => __('New News/Events'),
+    'view_item' => __('View News/Events'),
+    'search_items' => __('Search News/Events'),
+    'not_found' =>  __('No News/Events found'),
+    'not_found_in_trash' => __('No News/Events found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'SMAT News and Events'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('smatnewsevents',$args);
+*/
+
+
+
+// Register the Program Highlights
+  
+     $labels = array(
+	'name' => _x('SMAT Program Highlights', 'post type general name'),
+    'singular_name' => _x('SMAT Program Highlights', 'post type singular name'),
+    'add_new' => _x('Add New', 'Programs'),
+    'add_new_item' => __('Add New Programs'),
+    'edit_item' => __('Edit Programs'),
+    'new_item' => __('New Programs'),
+    'view_item' => __('View Programs'),
+    'search_items' => __('Search Programs'),
+    'not_found' =>  __('No Programs found'),
+    'not_found_in_trash' => __('No Programs found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'SMAT Program Highlights'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('smatprograms',$args);
+  
+  
+   // Register the Program Highlights
+  
+/*     $labels = array(
+	'name' => _x('SMAT Resources', 'post type general name'),
+    'singular_name' => _x('Resources', 'post type singular name'),
+    'add_new' => _x('Add New', 'Resources'),
+    'add_new_item' => __('Add New Resources'),
+    'edit_item' => __('Edit Resources'),
+    'new_item' => __('New Resources'),
+    'view_item' => __('View Resources'),
+    'search_items' => __('Search Resources'),
+    'not_found' =>  __('No Resources found'),
+    'not_found_in_trash' => __('No Resources found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'SMAT Resources'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('smatresources',$args);*/
+  
+    // Register the Homepage Slides
+  
+     $labels = array(
+	'name' => _x('SMAT Homepage Slides', 'post type general name'),
+    'singular_name' => _x('Homepage Slides', 'post type singular name'),
+    'add_new' => _x('Add New', 'Slide'),
+    'add_new_item' => __('Add New Slide'),
+    'edit_item' => __('Edit Slides'),
+    'new_item' => __('New Slide'),
+    'view_item' => __('View Slides'),
+    'search_items' => __('Search Slides'),
+    'not_found' =>  __('No Slides found'),
+    'not_found_in_trash' => __('No Slides found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'SMAT Homepage Slides'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('smatslides',$args);
+
+} // close custom post type
+
+
+/*
+##############################################
+
+				Custom Taxonomies
+
+*/
+
+add_action( 'init', 'build_taxonomies', 0 );
+ 
+function build_taxonomies() {
+	
+// cusotm tax
+    register_taxonomy( 'organization', 'partner_organizations',
+	 array( 
+	'hierarchical' => true, 
+	'label' => 'Organization Type', 
+	'query_var' => true, 
+	'rewrite' => true ,
+	'show_admin_column' => true,
+	'public' => true,
+	'rewrite' => array( 'slug' => 'organization' ),
+	'_builtin' => true
+	) );
+	
+// cusotm tax
+    register_taxonomy( 'county', 'partner_organizations',
+	 array( 
+	'hierarchical' => true, 
+	'label' => 'County', 
+	'query_var' => true, 
+	'rewrite' => true ,
+	'show_admin_column' => true,
+	'public' => true,
+	'rewrite' => array( 'slug' => 'county' ),
+	'_builtin' => true
+	) );
+
+// cusotm tax
+    register_taxonomy( 'leadershiptype', 'leadership',
+	 array( 
+	'hierarchical' => true, 
+	'label' => 'Leadership Type', 
+	'query_var' => true, 
+	'rewrite' => true ,
+	'show_admin_column' => true,
+	'public' => true,
+	'rewrite' => array( 'slug' => 'leadershiptype' ),
+	'_builtin' => true
+	) );
+
+
+} // End build taxonomies
+
+add_filter( 'manage_taxonomies_for_activity_columns', 'activity_type_columns' );
+function activity_type_columns( $taxonomies ) {
+    $taxonomies[] = 'county';
+    return $taxonomies;
+}
+/*
+
+			OPtions pages
+
+*/
+/*if( function_exists('acf_add_options_sub_page') )
+{
+    acf_add_options_sub_page( 'Resources' , 'Contact' );
+}
+ */
+
 
 
 // add additional image sizes
