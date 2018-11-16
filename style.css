@@ -99,8 +99,8 @@ h3.counties {
 -------------------------------------------------------------- */
 .header {
 	width: 1045px;
-	/*height:218px;*/
 	position:relative;	
+    z-index: 15;
 }
 #top-header {
 	width: 100%;
