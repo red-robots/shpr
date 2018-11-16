@@ -166,12 +166,6 @@
             </ul>
         </div><!-- social links -->
         
-        <div class="weboc-links">
-    	<a href="http://www.ncwebeoc.com" target="_blank">www.ncwebeoc.com</a>
-        <br>
-        <a href="http://www.ncsmartt.org" target="_blank">www.ncsmartt.org</a>
-    </div><!-- weboc -->
-        
         <!--<div class="header-twitter">
         	<a href="<?php //the_field('twitter_link', 'option'); ?>" target="_blank">Follow us on Twitter</a>
         </div> header facebook -->
