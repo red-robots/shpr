@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+	<div id="primary" class="site-content clear">
+		<div class="container">
 
 			<article id="post-0" class="post error404 no-results not-found">
 				<header class="entry-header">
@@ -20,7 +20,7 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Please use the links below to browse our site.', 'twentytwelve' ); ?></p>
 					
-                    <?php wp_list_pages('exclude=36,2&title_li=' ); ?>
+                    <ul class="sitemap-info"><?php wp_list_pages('exclude=36,2&title_li=' ); ?></ul>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 

@@ -29,16 +29,41 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/colorbox.css" />
-
 <link href='https://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
-
-
+<script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 <?php wp_head(); ?>
 </head>
+<?php 
+global $post;
+$segments = array('sehpc','smat');
+$url      = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$validURL = str_replace("&", "&amp", $url);
+$uri_parts = explode('/',$validURL);
+$current_segment = '';
+foreach($segments as $seg) {
+  if( in_array($seg, $uri_parts) ) {
+     $current_segment = $seg;
+     break;
+  }
+}
 
-<body>
+$classes[] = $current_segment;
+
+$parent_id = ( isset($post->post_parent) && $post->post_parent>0 ) ? $post->post_parent : '';
+$classes[] = ( is_home() || is_front_page() ) ? 'home':'sub-page';
+if($parent_id) {
+  if( $parent = get_post($parent_id) ) {
+    $classes[] = $parent->post_name;
+  }
+} else {
+  $classes[] = ( isset($post->post_name) && $post->post_name ) ? $post->post_name : '';
+}
+
+$the_classes = ($classes) ? array_unique($classes) : '';
+?>
+<body <?php body_class($the_classes); ?>>
+<div class="site clear">
 
 <!--<div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -87,35 +112,33 @@
 		 $WhichSiteAreWeOn = 'SEHPC';
 		 $headerDescription = 'header_description';
 		//$whatsiteheader = 'slides';
-	 }?>
-   
-   
-   
-   
-   
-  <div id="top-header">
-    	<div id="top-header-inside">
-        
-        
-        
+}
 
-        	
-			<?php if(!is_front_page()) : ?>
-                <div id="top-buttons">
-                    <ul>
-                       <?php if ('SEHPC' == $WhichSiteAreWeOn) { // If is The MHPC Tree ?>
-                            <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
-                       <?php } elseif('SMAT' == $WhichSiteAreWeOn) { // If is the SMAT Tree?>
-                            <li class="mhpc"><a href="<?php bloginfo('url'); ?>/sehpc">Go to SHPR site</a></li>
-                            <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
-                       <?php } ?>
-                          
-                    </ul>
-               </div><!-- top buttons -->
-            <?php endif; ?>
-           
-        </div><!-- top header inside -->
-    </div><!-- top header -->
+
+
+$WhichSiteAreWeOn = strtoupper($current_segment);
+?>
+   
+
+  <div id="top-header">
+    <div id="top-header-inside">    	
+    <?php if(!is_front_page()) { ?>
+    <div class="container">
+      <div id="top-buttons">
+        <ul>
+        <?php if ('SEHPC' == $WhichSiteAreWeOn) { // If is The MHPC Tree ?>
+            <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
+        <?php } elseif('SMAT' == $WhichSiteAreWeOn) { // If is the SMAT Tree?>
+            <li class="mhpc"><a href="<?php bloginfo('url'); ?>/sehpc">Go to SHPR site</a></li>
+            <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
+        <?php } ?>
+        </ul>
+      </div><!-- top buttons -->
+    </div>
+    <?php } ?>
+
+    </div><!-- top header inside -->
+  </div><!-- top header -->
     
 
 
@@ -124,79 +147,35 @@
   } else { 
       $wrapperId = 'main';
   }?>
-<div id="<?php echo $wrapperId; ?>" class="wrapper">
-    
-     <?php if(!is_front_page()) : ?><div class="header"><?php endif; ?>
-    
-        
-        <?php if(!is_front_page()) : ?>
-        
+<div id="<?php echo $wrapperId; ?>" class="wrapper clear">  
+     <?php if(!is_front_page()) : ?><div class="header clear"><div class="container clear"><?php endif; ?>
+
+      <?php if(!is_front_page()) { ?>
         <?php if('SEHPC' == $WhichSiteAreWeOn) {  // is is mhpc ?>
         	<h1 class="logo"><a href="<?php bloginfo('url'); ?>/sehpc">Metrolina Preparedness</a></h1>
         <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
         	<h1 class="logo-smat"><a href="<?php bloginfo('url'); ?>/smat">Metrolina Preparedness</a></h1>
         <?php } ?>
-       
-        
-        <div class="header-right">
-        
-        <div class="top-description">
-			<?php if(get_field($headerDescription, 'option')!="") { the_field($headerDescription , 'option'); } ?>
-        </div><!-- top description -->
-    
-    
-		<?php if('MHPC' == $WhichSiteAreWeOn) {  // is is mhpc 
-        		$facebooklink = get_field('facebook_link', 'option');
-				$twitterlink = get_field('twitter_link', 'option');
-         } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat
-        		$facebooklink = get_field('smat_facebook', 'option');
-				$twitterlink = get_field('smat_twitter', 'option');
-         } ?>
-        <div id="sociallinks">
-        	<ul>
-            	<?php if ($facebooklink != '') : ?>
-            	<li class="facebook"><a href="<?php echo $facebooklink;  ?>" target="_blank">Like us on Facebook</a></li>
-                <?php endif; ?>
-                <?php if ($twitterlink != '') : ?>
-                <li class="twitter"><a href="<?php echo $twitterlink;  ?>" target="_blank">Follow us on Twitter</a></li>
-                <?php endif; ?>
-                <?php if ($youtubelink != '') : ?>
-                <li class="youtube"><a href="<?php echo $youtubelink; ?>" target="_blank">Watch us on Youtube</a></li>
-                <?php endif; ?>
-            </ul>
-        </div><!-- social links -->
-        
-        <!--<div class="header-twitter">
-        	<a href="<?php //the_field('twitter_link', 'option'); ?>" target="_blank">Follow us on Twitter</a>
-        </div> header facebook -->
-        
-        <div class="header-facebook">
-        	<a href="<?php the_field('facebook_link', 'option'); ?>" target="_blank">Like us on Facebook</a>
-        </div> <!--header facebook -->
-        
-        
-       <!-- <div class="facebook-like">
-        	<div class="fb-like" data-href="<?php //the_permalink(); ?>" data-width="64" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-            </div> facebook like -->
-            
-        </div><!-- header right -->
-        
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-        	<?php if('SEHPC' == $WhichSiteAreWeOn) {  // is is mhpc ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-           <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
-        		<?php wp_nav_menu( array( 'theme_location' => 'smat', 'menu_class' => 'nav-menu' ) ); ?>
-        <?php } ?>
-		</nav><!-- #site-navigation -->
-        
-        <?php endif; // end if is not front page ?>
+          
+        <div class="head-right-info"> 
+          <span class="burger" id="mobile-menu"><span></span></span>
+          <nav id="site-navigation" class="main-navigation" role="navigation">
+          <?php if('SEHPC' == $WhichSiteAreWeOn) {  // is is mhpc ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+          <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'smat', 'menu_class' => 'nav-menu' ) ); ?>
+          <?php } ?>
+          </nav><!-- #site-navigation -->
+        </div>
 
-	<?php if(!is_front_page()) : ?></div><!-- header --><?php endif; ?>
+      <?php } // end if is not front page ?>
+
+	<?php if(!is_front_page()) : ?></div></div><!-- header --><?php endif; ?>
     
     
-<?php if(is_page('sehpc') || is_page('smat')) : ?>
-	<?php get_template_part('includes/homeslides'); ?>
-<?php endif; // end if is front page?>
+<?php if(is_page('sehpc') || is_page('smat')) { ?>
+	<?php get_template_part('inc/banner'); ?>
+<?php } ?>
     
 
 

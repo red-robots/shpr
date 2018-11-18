@@ -23,20 +23,21 @@ $the_query = new WP_Query( $args );  ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<div style='display:none'>
     <div id='bladen' class="popups">
-    <h3>Bladen County</h3> 
-<?php while ( $the_query->have_posts() ) : ?>
-        <?php  $the_query->the_post(); ?>
-        
-      		<div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
-            </div><!-- popup -->
-		
-                   
-        <?php endwhile; ?> 
-        </div><!-- #burke -->
+    	<h3>Bladen County</h3> 
+	    <div class="popups-inner clear">
+			<?php while ( $the_query->have_posts() ) : ?>
+	        <?php  $the_query->the_post(); ?>
+	      		<div class="popup popupdiv">
+	      			<div class="inner clear">
+		                <div class="pop-title"><?php the_title(); ?></div>
+		                <div class="pop-address"><?php the_field('address'); ?></div>
+		                <div class="pop-phone"><?php the_field('phone#'); ?></div>
+		                <div class="pop-liason"><?php the_field('liason'); ?></div>
+	            	</div>
+	            </div><!-- popup -->
+	        <?php endwhile; ?> 
+	    </div>
+    </div><!-- #burke -->
     </div><!-- display none --> 
 <?php endif; ?>  
 <?php wp_reset_postdata(); ?> 
@@ -65,21 +66,22 @@ $the_query = new WP_Query( $args );  ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<div style='display:none'>
      <div id='pender' class="popups">
-         <h3>Pender County</h3>
-<?php while ( $the_query->have_posts() ) : ?>
-        <?php  $the_query->the_post(); ?>
-        
-             
-            <div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
-            </div><!-- popup -->
-		
-      
-                   
-        <?php endwhile; ?>
+        <h3>Pender County</h3>
+	    <div class="popups-inner clear">
+			<?php while ( $the_query->have_posts() ) : ?>
+			<?php  $the_query->the_post(); ?>
+			
+			    <div class="popup popupdiv">
+						<div class="inner clear">
+			            <div class="pop-title"><?php the_title(); ?></div>
+			            <div class="pop-address"><?php the_field('address'); ?></div>
+			            <div class="pop-phone"><?php the_field('phone#'); ?></div>
+			            <div class="pop-liason"><?php the_field('liason'); ?></div>
+			    	</div>
+			    </div><!-- popup -->
+			           
+			<?php endwhile; ?>
+	    </div>
     </div><!-- #cleveland -->
     </div><!-- display none -->  
 <?php endif; ?>  
@@ -110,21 +112,22 @@ $the_query = new WP_Query( $args );  ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<div style='display:none'>
      <div id='columbus' class="popups">
-         <h3>Columbus County</h3>
-<?php while ( $the_query->have_posts() ) : ?>
-        <?php  $the_query->the_post(); ?>
-        
-             
-            <div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
-            </div><!-- popup -->
-		
-      
-                   
-        <?php endwhile; ?>
+		<h3>Columbus County</h3>
+		<div class="popups-inner clear">
+		<?php while ( $the_query->have_posts() ) : ?>
+		<?php  $the_query->the_post(); ?>
+
+		    <div class="popup popupdiv">
+					<div class="inner clear">
+		            <div class="pop-title"><?php the_title(); ?></div>
+		            <div class="pop-address"><?php the_field('address'); ?></div>
+		            <div class="pop-phone"><?php the_field('phone#'); ?></div>
+		            <div class="pop-liason"><?php the_field('liason'); ?></div>
+		        </div>
+		    </div><!-- popup -->
+		           
+		<?php endwhile; ?>
+		</div>
     </div><!-- #catawba -->
     </div><!-- display none -->  
 <?php endif; ?>  
@@ -157,20 +160,21 @@ $the_query = new WP_Query( $args );  ?>
 	<div style='display:none'>
      <div id='brunswick' class="popups">
          <h3>Brunswick County</h3>
-<?php while ( $the_query->have_posts() ) : ?>
+    	<div class="popups-inner clear">
+		<?php while ( $the_query->have_posts() ) : ?>
         <?php  $the_query->the_post(); ?>
-        
              
-            <div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
+            <div class="popup popupdiv">
+      			<div class="inner clear">
+	                <div class="pop-title"><?php the_title(); ?></div>
+	                <div class="pop-address"><?php the_field('address'); ?></div>
+	                <div class="pop-phone"><?php the_field('phone#'); ?></div>
+	                <div class="pop-liason"><?php the_field('liason'); ?></div>
+                </div>
             </div><!-- popup -->
-		
-      
                    
         <?php endwhile; ?>
+    	</div>
     </div><!-- #lincoln -->
     </div><!-- display none -->  
 <?php endif; ?>  
@@ -202,21 +206,22 @@ $the_query = new WP_Query( $args );  ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<div style='display:none'>
      <div id='new-hanover' class="popups">
-         <h3>New Hanover County</h3>
-<?php while ( $the_query->have_posts() ) : ?>
-        <?php  $the_query->the_post(); ?>
-        
-             
-            <div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
-            </div><!-- popup -->
-		
-      
-                   
-        <?php endwhile; ?>
+        <h3>New Hanover County</h3>
+	    <div class="popups-inner clear">
+		<?php while ( $the_query->have_posts() ) : ?>
+	        <?php  $the_query->the_post(); ?>
+	        
+	             <div class="popup popupdiv">
+	      			<div class="inner clear">
+		                <div class="pop-title"><?php the_title(); ?></div>
+		                <div class="pop-address"><?php the_field('address'); ?></div>
+		                <div class="pop-phone"><?php the_field('phone#'); ?></div>
+		                <div class="pop-liason"><?php the_field('liason'); ?></div>
+	                </div>
+	            </div><!-- popup -->
+			
+	    <?php endwhile; ?>
+	    </div>
     </div><!-- #gaston -->
     </div><!-- display none -->  
 <?php endif; ?>  
@@ -246,21 +251,22 @@ $the_query = new WP_Query( $args );  ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<div style='display:none'>
      <div id='onslow' class="popups">
-         <h3>New Hanover County</h3>
-<?php while ( $the_query->have_posts() ) : ?>
-        <?php  $the_query->the_post(); ?>
-        
-             
-            <div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
-            </div><!-- popup -->
+	    <h3>Onslow County</h3>
+	    <div class="popups-inner clear">
+		<?php while ( $the_query->have_posts() ) : ?>
+		    <?php  $the_query->the_post(); ?>
+		       
+	        <div class="popup popupdiv">
+	  			<div class="inner clear">
+	                <div class="pop-title"><?php the_title(); ?></div>
+	                <div class="pop-address"><?php the_field('address'); ?></div>
+	                <div class="pop-phone"><?php the_field('phone#'); ?></div>
+	                <div class="pop-liason"><?php the_field('liason'); ?></div>
+	            </div>
+	        </div><!-- popup -->
 		
-      
-                   
-        <?php endwhile; ?>
+	    <?php endwhile; ?>
+	    </div>
     </div><!-- #gaston -->
     </div><!-- display none -->  
 <?php endif; ?>  
@@ -290,21 +296,22 @@ $the_query = new WP_Query( $args );  ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<div style='display:none'>
      <div id='duplin' class="popups">
-         <h3>New Hanover County</h3>
-<?php while ( $the_query->have_posts() ) : ?>
-        <?php  $the_query->the_post(); ?>
-        
-             
-            <div class="popup">
-                <div class="pop-title"><?php the_title(); ?></div>
-                <div class="pop-address"><?php the_field('address'); ?></div>
-                <div class="pop-phone"><?php the_field('phone#'); ?></div>
-                <div class="pop-liason"><?php the_field('liason'); ?></div>
-            </div><!-- popup -->
-		
-      
-                   
-        <?php endwhile; ?>
+        <h3>Duplin County</h3>
+	    <div class="popups-inner clear">
+		<?php while ( $the_query->have_posts() ) : ?>
+	        <?php  $the_query->the_post(); ?>
+	        
+	            <div class="popup popupdiv">
+	      			<div class="inner clear">
+		                <div class="pop-title"><?php the_title(); ?></div>
+		                <div class="pop-address"><?php the_field('address'); ?></div>
+		                <div class="pop-phone"><?php the_field('phone#'); ?></div>
+		                <div class="pop-liason"><?php the_field('liason'); ?></div>
+	            	</div>
+	            </div><!-- popup -->
+	                   
+	    <?php endwhile; ?>
+	    </div>
     </div><!-- #gaston -->
     </div><!-- display none -->  
 <?php endif; ?>  

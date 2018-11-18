@@ -10,9 +10,11 @@ get_header(); ?>
 			
 				
                 
-              <div class="page-content">
-            	
+            <div class="page-content clear">
+            <div class="container">
 				
+				<h1 class="page-title"><?php echo get_the_title(); ?></h1>
+
 				<div class="page-left">
                
               
@@ -39,9 +41,9 @@ get_header(); ?>
                 
             <div class="entry-content">
             
-            <h1><?php the_title(); ?></h1>
+            	<h2 class="entry-title"><?php the_title(); ?></h2>
             
-            		<?php the_content(); ?>
+            	<?php the_content(); ?>
                 
               <?php endwhile; endif; // end of the loop. ?>
             </div><!-- entry-content -->
@@ -73,7 +75,7 @@ get_header(); ?>
 					));
 					if ($wp_query->have_posts()) : ?>
                     
-                    <h2>News Archives</h2>
+                    <h2 class="entry-title">News Archives</h2>
                     
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                     
@@ -109,7 +111,7 @@ get_header(); ?>
             </div><!-- page- right -->
             
             
-            
+            </div>
             </div><!-- page-content -->
                 
                 

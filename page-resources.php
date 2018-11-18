@@ -5,7 +5,8 @@
 
 get_header(); ?>
 
-<div class="page-content">
+<div class="page-content clear">
+    <div class="container">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
         <div class="page-left">         
             <div class="entry-content">
@@ -26,5 +27,6 @@ get_header(); ?>
         
     <?php endwhile; // end of the loop. ?>
     <?php endif; // end of the loop. ?>
+    </div>
 </div><!-- page-content -->
 <?php get_footer(); ?>

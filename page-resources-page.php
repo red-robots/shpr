@@ -5,7 +5,8 @@
 
 get_header(); ?>
 
-<div class="page-content">
+<div class="page-content clear">
+    <div class="container">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
         <div class="page-left">         
             <div class="entry-content">
@@ -20,7 +21,12 @@ get_header(); ?>
                 $c_class = $c['class_'];
                 if($c_title) { ?>
                 <div class="panel class-info">
-                    <div class="panel_title"><?php echo $c_title;?><a class="arrow"><i class="fa fa-caret-down"></i></a></div>
+                    <div class="panel_title"><?php echo $c_title;?>
+                        <a class="arrow">
+                            <span class="icon1"><i class="fa fa-caret-down"></i></span>
+                            <span class="icon2"><i class="fa fa-minus"></i></span>
+                        </a>
+                    </div>
                     <div class="panel_text"><?php echo $c_class;?></div>
                 </div>
                 <?php } ?>
@@ -43,5 +49,6 @@ get_header(); ?>
         
     <?php endwhile; // end of the loop. ?>
     <?php endif; // end of the loop. ?>
+    </div>
 </div><!-- page-content -->
 <?php get_footer(); ?>
