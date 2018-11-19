@@ -324,3 +324,18 @@ function remove_wp_logo( $wp_admin_bar ) {
   Adds Options page for ACF.
 ---------------------------------------*/
 if( function_exists('acf_add_options_page') ) {acf_add_options_page();}
+
+function get_site_type() {
+  $segments = array('sehpc','smat');
+  $url      = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  $validURL = str_replace("&", "&amp", $url);
+  $uri_parts = explode('/',$validURL);
+  $current_segment = '';
+  foreach($segments as $seg) {
+    if( in_array($seg, $uri_parts) ) {
+      $current_segment = $seg;
+      break;
+    }
+  }
+  return $current_segment;
+}

@@ -36,18 +36,7 @@
 </head>
 <?php 
 global $post;
-$segments = array('sehpc','smat');
-$url      = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$validURL = str_replace("&", "&amp", $url);
-$uri_parts = explode('/',$validURL);
-$current_segment = '';
-foreach($segments as $seg) {
-  if( in_array($seg, $uri_parts) ) {
-     $current_segment = $seg;
-     break;
-  }
-}
-
+$current_segment = get_site_type();
 $classes[] = $current_segment;
 
 $parent_id = ( isset($post->post_parent) && $post->post_parent>0 ) ? $post->post_parent : '';

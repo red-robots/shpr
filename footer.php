@@ -6,6 +6,7 @@
 ?>
 </div><!-- #main .wrapper -->
 <?php 
+$current_segment = get_site_type();
 $social['facebook'] = get_field('facebook_link','option');
 $social['twitter'] = get_field('twitter_link','option');
 $social['linkedin'] = get_field('linkedin_link','option');
@@ -37,8 +38,8 @@ $columns[] = array('title'=>$contact_information_title_1,'content'=>$contact_inf
 $columns[] = array('title'=>$contact_information_title_2,'content'=>$contact_information_2);
 $columns[] = array('title'=>$contact_information_title_3,'content'=>$contact_information_3);
 $columns[] = array('title'=>$contact_information_title_4,'content'=>$contact_information_4);
-
 ?>
+<?php if($current_segment) { ?>
 <div class="footer-content clear">
 	<div class="inner-pad">
 		<div class="container">
@@ -76,6 +77,7 @@ $columns[] = array('title'=>$contact_information_title_4,'content'=>$contact_inf
 		</div>
 	</div>
 </div>
+<?php } ?>
 </div><!-- site-->
 
 <?php wp_footer(); ?>
