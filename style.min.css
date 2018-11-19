@@ -2058,19 +2058,22 @@ html[xmlns] .slides{display:block}
 @media screen and (min-width:780px){.footer-content .information{padding-top:70px}
 }.footer-content .information .row{margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
 @media screen and (min-width:780px){.footer-content .information .row{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:top;-webkit-align-items:top;-ms-flex-align:top;align-items:top;-webkit-box-pack:top;-webkit-justify-content:top;-ms-flex-pack:top;justify-content:top;padding-left:0;padding-right:0}
-}.footer-content .information .info{display:inline-block;width:100%;box-sizing:border-box;font-size:16px;margin-top:0;border-left:0;position:relative;padding-top:20px;padding-bottom:20px;border-top:1px solid #FFF;text-align:center}
+}.footer-content .information .info{display:inline-block;width:100%;box-sizing:border-box;font-size:16px;margin-top:0;border-left:0;position:relative;padding-top:20px;padding-bottom:0;border-top:1px solid #FFF;text-align:center}
 .footer-content .information .info:before{display:none}
-@media screen and (min-width:780px){.footer-content .information .info{margin-top:0;padding-top:0;padding-bottom:20px;border-top:0;text-align:left}
+@media screen and (min-width:780px){.footer-content .information .info{margin-top:0;padding-top:0;padding-bottom:0;border-top:0;text-align:left}
 .footer-content .information .info:before{content:"";display:block;background:#FFF;width:1px;height:100%;position:absolute;top:0;left:-3px}
 .footer-content .information .info.first:before{display:none}
-}.footer-content .information .info .pad{-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;position:relative;padding-left:20px;padding-right:20px}
+}.footer-content .information .info .pad{-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;position:relative;padding-left:20px;padding-right:20px;line-height:1.4}
+.footer-content .information .info .pad p{margin-top:0;margin-bottom:15px}
 .footer-content .information .f-title{margin:0;font-weight:400;font-size:20px}
 .foot-col{text-align:center;float:left;width:100%;margin-bottom:30px}
 @media screen and (min-width:780px){.foot-col{width:50%;text-align:left;margin-bottom:0}
 }.foot-col .col-title h3{font-weight:400;font-size:23px;line-height:1.3;margin:0}
+.foot-col.col-1 p{margin-top:0;margin-bottom:0}
 .foot-col.col-2{text-align:center}
 @media screen and (min-width:780px){.foot-col.col-2{text-align:right}
-}.foot-col.col-2 .col-title{font-size:23px;line-height:1.3;text-align:center}
+}.foot-col.col-2 p{margin-top:0;margin-bottom:0}
+.foot-col.col-2 .col-title{font-size:23px;line-height:1.3;text-align:center}
 @media screen and (min-width:780px){.foot-col.col-2 .col-title{display:inline-block;text-align:left}
 }.footer-social{margin:15px 0 0;padding:0;list-style:none;width:100%;float:left;position:relative;left:-10px}
 .footer-social li{display:inline-block}

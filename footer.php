@@ -55,7 +55,7 @@ $columns[] = array('title'=>$contact_information_title_4,'content'=>$contact_inf
 			</div>
 
 			<div class="foot-col col-2">
-				<div class="col-title"><?php echo ($footer_information_right) ? nl2br($footer_information_right):'';?></div>
+				<div class="col-title"><?php echo ($footer_information_right) ? $footer_information_right:'';?></div>
 			</div>
 
 			<div class="information">
