@@ -114,14 +114,6 @@ $WhichSiteAreWeOn = strtoupper($current_segment);
     <?php if(!is_front_page()) { ?>
     <div class="container">
       <div id="top-buttons">
-        <ul>
-        <?php if ('SEHPC' == $WhichSiteAreWeOn) { // If is The MHPC Tree ?>
-            <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
-        <?php } elseif('SMAT' == $WhichSiteAreWeOn) { // If is the SMAT Tree?>
-            <li class="mhpc"><a href="<?php bloginfo('url'); ?>/sehpc">Go to SHPR site</a></li>
-            <li class="member"><a href="<?php bloginfo('url'); ?>/sehpc/members">Member-login</a></li>
-        <?php } ?>
-        </ul>
       </div><!-- top buttons -->
     </div>
     <?php } ?>

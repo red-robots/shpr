@@ -1,9 +1,19 @@
-$(window).load(function() {
+jQuery(document).ready(function($){
 
 // front page slider 
-	$('.flexslider').flexslider({
-       animation: "slide"
-    });
+	// $('.flexslider').flexslider({
+ //     animation: "slide"
+ //  });
+
+
+$(".rslides").responsiveSlides({
+  pager: true,           
+  nav: false,
+  speed: 800,
+  timeout: 6000,  
+  auto: true
+});
+
 
 // splash page hovers 
 

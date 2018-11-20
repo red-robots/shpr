@@ -2165,6 +2165,36 @@ html[xmlns] .slides {
 	.hide {
 		display: none;
 	}
+	.rslides_tabs {
+		position: absolute;
+		left: 0;
+		bottom: 8px;
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		z-index: 40;
+		width: 100%;
+		text-align: center;
+		li {
+			display: inline-block;
+			margin:5px;
+			position: relative;
+			top: -5px;
+			a {
+				display: block;
+				font-size: 1px;
+				color: transparent;
+				width: 10px;
+				height: 10px;
+				background:#FFF;
+				border-radius:100px;
+				opacity: 0.5;
+			}
+			&.rslides_here a {
+				opacity: 1;
+			}
+		}
+	}
 }
 .sehpc {
 	#main, .header {
