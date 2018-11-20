@@ -1,19 +1,19 @@
 jQuery(document).ready(function($){
 
 // front page slider 
-	// $('.flexslider').flexslider({
- //     animation: "slide"
- //  });
+// $('.flexslider').flexslider({
+//    animation: "slide"
+// });
 
-
-$(".rslides").responsiveSlides({
-  pager: true,           
-  nav: false,
-  speed: 800,
-  timeout: 6000,  
-  auto: true
+/* Effect options: scrollHorz, fade */
+$('#slideshow').cycle({
+  fx:'fade', 
+  slides:'> li',
+  pager: '.cycle-pager',
+  pagerActiveClass: 'active_slide',
+  next:'.next_slide',
+  prev:'.prev_slide'
 });
-
 
 // splash page hovers 
 
@@ -97,22 +97,21 @@ $('#burke').mouseout();
   var $checkboxes = $('#filters input');
   
   // init isotope, then insert all items from hidden #alpha
- 
- 
-  $container.isotope({
-  	itemSelector: '.blog-square',
-	  masonry: {
-  			//columnWidth: 310
-		},
-		filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-  })
   
-  .isotope( 'insert', $alpha.find('.blog-square') );
+  // $container.isotope({
+  // 	itemSelector: '.blog-square',
+	 //  masonry: {
+  // 			//columnWidth: 310
+		// },
+		// filter: '*',
+  //       animationOptions: {
+  //           duration: 750,
+  //           easing: 'linear',
+  //           queue: false
+  //       }
+  // })
+  
+  // .isotope( 'insert', $alpha.find('.blog-square') );
   
   $('.filter a').click(function(){
         $('.filter .current').removeClass('current');
@@ -193,3 +192,4 @@ var currentTallest = 0,
   });
 
 }); // end of on window load function.
+

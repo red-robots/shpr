@@ -192,12 +192,12 @@ gulp.task( 'vendorsJs', function() {
 	//gulp.src( jsVendorSRC )
 	gulp.src( [
 		'./assets/js/vendors/blocks.js',
-		'./assets/js/vendors/responsiveslides.js',
+		'./assets/js/vendors/jquery.cycle2.js',
 		'./assets/js/vendors/colorbox.js',
-		'./assets/js/vendors/isotope.js',
 		'./assets/js/vendors/images-loaded.js',
 		'./assets/js/vendors/navigation.js',
-		'./assets/js/vendors/imagemap.js'
+		'./assets/js/vendors/imagemap.js',
+		'./assets/js/vendors/isotope.js'
 		] )
 		.pipe( concat( jsVendorFile + '.js' ) )
 		.pipe( gulp.dest( jsVendorDestination ) )

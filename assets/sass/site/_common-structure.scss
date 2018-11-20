@@ -82,7 +82,7 @@ h3.counties {
 .header {
 	width: 1045px;
 	position:relative;	
-    z-index: 15;
+    z-index: 200;
 }
 #top-header {
 	width: 100%;
@@ -861,33 +861,64 @@ h2.hometitle3 a {
 /* = Map
 -------------------------------------------------------------- */
 #states-container {
-	max-width: 1050px;
-	width: 90%;
+	max-width: 100%;
+	width: 100%;
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;	
+	height: 330px;
+	@media screen and (min-width: $tabwidth) {
+		max-width: 1050px;
+		width: 90%;
+		height: auto;
+	}
 }
 .map-words-container {
 	width: 200px;
 	position: absolute;
 	bottom: 50px;
-	right: 100px;
+	right: 0;
 	border: 4px solid #ccc;
 	z-index: 900;
-	padding: 0px 20px 20px 20px;
+	padding: 0 0;
+	background: rgba(255,255,255,.6);
+	@media screen and (min-width: $tabwidth) {
+		width: 200px;
+		right: 100px;
+		padding: 0px 20px 20px 20px;
+	}
 }
 ul.marginup {
 	margin: -22px 0 0 0 !important;	
 }
 .map-words {
-	width: auto;
-	float:left	
+	width: 100%;
+	float:left;
+	h3.counties {
+		margin-top: 10px;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	@media screen and (min-width: $tabwidth) {
+		width: auto;
+		h3.counties {
+			text-align: left;
+		}
+	}
 }
 .map-image {
-	width: 780px;
-	height: 372px;
-	margin: 0 0 20px 0;
+	width: 100%;
+	height: 100%;
+	margin: 0 0;
 	float: left;
+	position: relative;
+	left: -40px;
+	@media screen and (min-width: $tabwidth) {
+		width: 780px;
+		height: 372px;
+		margin: 0 0 20px 0;
+		left: 0;
+	}
 }
 #overlayr1 {
     position:absolute;
@@ -987,9 +1018,12 @@ ul.marginup {
 	border: solid #0074C0 1px;
 }
 .column {
-	width: 25%;
+	width: 100%;
 	float: left;
 	overflow: hidden;
+	@media screen and (min-width: $tabwidth) {
+		width: 25%;
+	}
 }
 .column-header {
 	width: 100%;
@@ -2193,6 +2227,106 @@ html[xmlns] .slides {
 			&.rslides_here a {
 				opacity: 1;
 			}
+		}
+	}
+
+	.rslides {
+		position: relative;
+		list-style: none;
+		overflow: hidden;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.rslides li {
+		-webkit-backface-visibility: hidden;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.rslides li:first-child {
+		position: relative;
+		display: block;
+		float: left;
+	}
+
+	.rslides img {
+		display: block;
+		height: auto;
+		float: left;
+		width: 100%;
+		border: 0;
+	}
+	
+}
+.banner-slides {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.cycle-pager {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 200;
+	text-align: center;
+	span {
+		cursor: pointer;
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		background:#FFF;
+		border-radius:100px;
+		opacity: 0.5;
+		margin:5px;
+		color: transparent;
+		&.active_slide {
+			opacity: 1;
+		}
+	}
+}
+.slidenavi {
+	width: 8%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 200;
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+	span {
+		display: inline-block;
+		font-size: 30px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 0.4;
+		transition: all ease-out .3s;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 50px;
+		}
+	}
+	&.prev_slide {
+		left: 0;
+		span {
+			left: 15%;
+		}
+	}
+	&.next_slide {
+		right: 0;
+		span {
+			right: 15%;
+		}
+	}
+	&:hover {
+		color: #FFF;
+		span {
+			opacity: 1;
 		}
 	}
 }
