@@ -43,20 +43,27 @@ $columns[] = array('title'=>$contact_information_title_4,'content'=>$contact_inf
 <div class="footer-content clear">
 	<div class="inner-pad">
 		<div class="container">
-			<div class="foot-col col-1">
-				<div class="col-title"><?php echo $footer_information_left;?></div>
-				<?php if($social_links) { ?>
-				<ul class="footer-social">
-				<?php foreach($social_links as $k=>$link) {  ?>
-					<li><a href="<?php echo $link;?>" target="_blank"><i class="<?php echo $icon[$k]?>"></i></a></li>
-				<?php } ?>
-				</ul>
-				<?php } ?>
+
+			<div class="foot-top-section clear">
+				<div class="column one">
+					<div class="txt1"><?php echo ($footer_information_right) ? $footer_information_right:'';?></div>
+				</div>
+
+				<div class="column two">
+					<div class="flex">
+						<div class="txt1"><?php echo $footer_information_left;?></div>
+						<?php if($social_links) { ?>
+						<ul class="footer-social">
+						<?php foreach($social_links as $k=>$link) {  ?>
+							<li><a href="<?php echo $link;?>" target="_blank"><i class="<?php echo $icon[$k]?>"></i></a></li>
+						<?php } ?>
+						</ul>
+						<?php } ?>
+					</div>
+				</div>
 			</div>
 
-			<div class="foot-col col-2">
-				<div class="col-title"><?php echo ($footer_information_right) ? $footer_information_right:'';?></div>
-			</div>
+			
 
 			<div class="information">
 				<div class="row clear">
