@@ -2356,13 +2356,19 @@ html[xmlns] .slides {
 	}
 	.container {
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 20px;
+		@media screen and (min-width: $tabwidth) {
+			padding-bottom: 30px;
+		}
 	}
 }
 .footer-content .information {
 	width: 100%;
 	float: left;
-	padding-top: 30px;
+	padding-top: 10px;
+	@media screen and (min-width: $tabwidth) {
+		padding-top: 30px;
+	}
 	.row {
 		margin-left: -20px;
 		margin-right: -20px;
@@ -2385,7 +2391,7 @@ html[xmlns] .slides {
 		border-left: 0;
 		position: relative;
 		padding-top: 20px;
-		padding-bottom: 0;
+		padding-bottom: 20px;
 		border-top: 1px solid #FFF;
 		text-align: center;
 		&:before {
@@ -2431,27 +2437,49 @@ html[xmlns] .slides {
     	margin: 0 0;
     	font-weight: 400;
     	font-size: 20px;
+    	line-height: 1.2;
     }
 }
 .foot-top-section {
 	@media screen and (min-width: $tabwidth) {
 		@include flexbox();
-		@include flexbox-align-content(center);
-		@include flexbox-align-items(center);
+		@include flexbox-align-content(top);
+		@include flexbox-align-items(top);
 		@include flexbox-justify(left);
 	}
 	.column {
 		width: 100%;
+		text-align: center;
+		margin-bottom: 25px;
+		@media screen and (min-width: $tabwidth) {
+			text-align: left;
+			margin-bottom: 0;
+		}
 		p {
 			margin: 0 0;
 		}
 		.txt1 {
-			font-size: 23px;
+			font-size: 18px;
 			line-height: 1.2;
+			@media screen and (min-width: $tabwidth) {
+				font-size: 20px;
+			}
+			@media screen and (min-width: $midwidth) {
+				font-size: 23px;
+			}
+		}
+	}
+	.column.one {
+		padding-right: 30px;
+		@media screen and (min-width: $deskwidth) {
+			padding-right: 0;
 		}
 	}
 	.column.two {
-		width: 50%;
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 45%;
+		}
 		.txt1 {
 			display: inline-block;
 		}
@@ -2460,26 +2488,34 @@ html[xmlns] .slides {
 		@media screen and (min-width: $tabwidth) {
 			@include flexbox();
 			@include flexbox-align-content(center);
+			float: right;
 		}
 	}
 }
 .footer-social {
-	display: inline-block;
+	display: block;
 	margin: 0 0;
 	padding: 0 0 0 0;
 	list-style: none;
-	width: auto;
+	width: 100%;
 	position: relative;
+	float: left;
 	@media screen and (min-width: $tabwidth) {
 		padding-left: 10px;
+		display: inline-block;
+		width: auto;
+		float: none;
 	}
 	li {
 		display: inline-block;
 		position: relative;
 		top: 0;
-		float: left;
+		float: none;
+		text-align: center;
 		@media screen and (min-width: $tabwidth) {
 			top: -3px;
+			float: left;
+			text-align: left;
 		}
 	}
 	a {
