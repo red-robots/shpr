@@ -2442,15 +2442,13 @@ html[xmlns] .slides {
 }
 .foot-top-section {
 	@media screen and (min-width: $tabwidth) {
-		@include flexbox();
-		@include flexbox-align-content(top);
-		@include flexbox-align-items(top);
-		@include flexbox-justify(left);
+	
 	}
 	.column {
 		width: 100%;
 		text-align: center;
 		margin-bottom: 25px;
+		box-sizing: border-box;
 		@media screen and (min-width: $tabwidth) {
 			text-align: left;
 			margin-bottom: 0;
@@ -2470,25 +2468,36 @@ html[xmlns] .slides {
 		}
 	}
 	.column.one {
-		padding-right: 30px;
-		@media screen and (min-width: $deskwidth) {
-			padding-right: 0;
+		text-align: center;
+		@media screen and (min-width: $midwidth) {
+			text-align: left;
+			width: 75%;
 		}
 	}
 	.column.two {
 		width: 100%;
+		padding-left: 0;
 		@media screen and (min-width: $tabwidth) {
-			width: 45%;
+			text-align: center;
+		}
+		@media screen and (min-width: $midwidth) {
+			width: 25%;
+			padding-left: 6px;
+			text-align: left;
 		}
 		.txt1 {
 			display: inline-block;
 		}
 	}
 	.flex {
+		float: none;
 		@media screen and (min-width: $tabwidth) {
+			
+		}
+		@media screen and (min-width: $midwidth) {
 			@include flexbox();
 			@include flexbox-align-content(center);
-			float: right;
+			float: left;
 		}
 	}
 }
@@ -2500,11 +2509,15 @@ html[xmlns] .slides {
 	width: 100%;
 	position: relative;
 	float: left;
+	top: 0;
 	@media screen and (min-width: $tabwidth) {
-		padding-left: 10px;
 		display: inline-block;
 		width: auto;
 		float: none;
+		top: 12px;
+	}
+	@media screen and (min-width: $midwidth) {
+		top: 0;
 	}
 	li {
 		display: inline-block;
