@@ -133,7 +133,7 @@ $WhichSiteAreWeOn = strtoupper($current_segment);
 
       <?php if(!is_front_page()) { ?>
         <?php if('SEHPC' == $WhichSiteAreWeOn) {  // is is mhpc ?>
-        	<h1 class="logo"><a href="<?php bloginfo('url'); ?>/sehpc">Metrolina Preparedness</a></h1>
+        	<h1 class="logo"><a href="<?php bloginfo('url'); ?>">Metrolina Preparedness</a></h1>
         <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
         	<h1 class="logo-smat"><a href="<?php bloginfo('url'); ?>/smat">Metrolina Preparedness</a></h1>
         <?php } ?>
