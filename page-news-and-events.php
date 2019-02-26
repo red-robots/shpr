@@ -179,19 +179,19 @@ if($cat == 'mhpc') {
 	$date1 = ($startdate) ? strtotime($startdate) : '';
 	$date2 = ($enddate) ? strtotime($enddate) : '';
 	$dateNow = strtotime( date('Y-m-d') );
-	$show_event = false;
-	if($date1 && $date2) {
-	    $range = range($date1,$date2);
-	    if ( (in_array($dateNow, $range) ) || $date1>=$dateNow ) {
-	        $show_event = TRUE;
-	    }
-	} else {
-	    if($date1) {
-	        if($date1>=$dateNow) {
-	            $show_event = TRUE;
-	        }
-	    }
-	}
+	// $show_event = false;
+	// if($date1 && $date2) {
+	//     $range = range($date1,$date2);
+	//     if ( (in_array($dateNow, $range) ) || $date1>=$dateNow ) {
+	//         $show_event = TRUE;
+	//     }
+	// } else {
+	//     if($date1) {
+	//         if($date1>=$dateNow) {
+	//             $show_event = TRUE;
+	//         }
+	//     }
+	// }
 
 	// make date object
 	$startdate = new DateTime($startdate);
