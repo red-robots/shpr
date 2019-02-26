@@ -58,6 +58,7 @@ if($cat == 'mhpc') {
 	$date1 = ($startdate) ? strtotime($startdate) : '';
 	$date2 = ($enddate) ? strtotime($enddate) : '';
 	$dateNow = strtotime( date('Y-m-d') );
+	$show_event = true;
 	// $show_event = false;
 	// if($date1 && $date2) {
 	//     $range = range($date1,$date2);
@@ -179,6 +180,7 @@ if($cat == 'mhpc') {
 	$date1 = ($startdate) ? strtotime($startdate) : '';
 	$date2 = ($enddate) ? strtotime($enddate) : '';
 	$dateNow = strtotime( date('Y-m-d') );
+	$show_event = true;
 	// $show_event = false;
 	// if($date1 && $date2) {
 	//     $range = range($date1,$date2);
