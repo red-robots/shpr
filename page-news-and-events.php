@@ -7,7 +7,9 @@ get_header(); ?>
 
 <?php 
 // get requested term
-$cat = $_REQUEST['cat'];
+if (isset($_GET['cat'])) {
+	$cat = $_REQUEST['cat'];
+}
 if($cat == 'mhpc') {
 	$catsmeow = 'mhpc-events';	
 } elseif($cat == 'smat') {
